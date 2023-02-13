@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-13-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page controller="CalculatorController">
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageBlockSection columns="2">
+        <apex:inputText value="{!firstNumber}" />
+        <apex:inputText value="{!secondNumber}" />
+        <apex:selectList value="{!operation}" size="1">
+          <apex:selectOption itemValue="+" itemLabel="+" />
+          <apex:selectOption itemValue="-" itemLabel="-" />
+          <apex:selectOption itemValue="*" itemLabel="*" />
+          <apex:selectOption itemValue="/" itemLabel="/" />
+        </apex:selectList>
+        <apex:commandButton value="Calculate" action="{!calculate}" reRender="result" />
+      </apex:pageBlockSection>
+      <apex:outputPanel id="result">
+        <apex:outputText value="{!result}" />
+      </apex:outputPanel>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

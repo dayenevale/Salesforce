@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-20-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page controller="CurrencyConverterController" lightningStyleSheets="true">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <title>Calculator</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <apex:slds />
+            <style>
+                .calc-block{	
+                margin-left:10%;
+                margin-right:10%;
+                margin-top: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="slds-scope">
+                <apex:form>
+                    <div class="calc-block">
+                        <apex:pageBlock>
+                            <apex:pageBlockSection columns="1">
+                                <div style="width:250px;">
+                                    <apex:outputLabel value="From Currency"/>
+                                    <apex:selectList value="{!fromCurrency}" size="1">
+                                        <apex:selectOption itemLabel="Real" itemValue="BRL"/>
+                                        <apex:selectOption itemLabel="Dollar" itemValue="USD"/>
+                                        <apex:selectOption itemLabel="Euro" itemValue="EUR"/>
+                                        <apex:selectOption itemLabel="Pound" itemValue="GBP"/>
+                                    </apex:selectList>
+                                    <apex:outputLabel value="To Currency"/>
+                                    <apex:selectList value="{!toCurrency}" size="1">
+                                        <apex:selectOption itemLabel="Real" itemValue="BRL"/>
+                                        <apex:selectOption itemLabel="Dollar" itemValue="USD"/>
+                                        <apex:selectOption itemLabel="Euro" itemValue="EUR"/>
+                                        <apex:selectOption itemLabel="Pound" itemValue="GBP"/>
+                                    </apex:selectList>
+                                    <apex:inputText value="{!amount}" label="Amount"/>
+                                </div>
+                            </apex:pageBlockSection>
+                            <apex:commandButton action="{!convert}" value="Convert"/>
+                            <apex:pageBlockSection columns="1" rendered="{!convertedAmount != null}">
+                                <apex:outputText label="Converted Amount" value="{!convertedAmount}"/>
+                            </apex:pageBlockSection>
+                        </apex:pageBlock>
+                    </div>
+                </apex:form>
+            </div>
+        </body>
+    </html>
+</apex:page>

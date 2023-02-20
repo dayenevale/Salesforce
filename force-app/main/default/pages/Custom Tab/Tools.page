@@ -1,0 +1,38 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-20-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page lightningStyleSheets="true" >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <title>Tools</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <apex:slds />
+            <style>
+            	.slds-scope{margin:5px;}
+            </style>
+        </head>
+        <body>
+            <div class="slds-scope">
+                <apex:tabPanel >
+                    <apex:tab label="Simple Calculator" id="calc">  
+                         <div>
+                            <apex:include pageName="Calculator"/>
+                        </div>
+                    </apex:tab>
+                    <apex:tab label="Currency Converter" id="currencyConverter">
+                        <apex:include pageName="CurrencyConverter"/>
+                    </apex:tab>
+                    <apex:tab label="Sales Commission Calculator" id="salesComission">
+                    	<apex:include pageName="SalesCommissionCalculator"/>
+                    </apex:tab>
+                </apex:tabPanel>
+            </div>
+        </body>
+    </html>
+</apex:page>

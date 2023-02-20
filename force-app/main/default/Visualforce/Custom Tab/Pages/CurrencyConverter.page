@@ -23,9 +23,9 @@
         </head>
         <body>
             <div class="slds-scope">
-                <apex:form>
+                <apex:form >
                     <div class="calc-block">
-                        <apex:pageBlock>
+                        <apex:pageBlock >
                             <apex:pageBlockSection columns="1">
                                 <div style="width:250px;">
                                     <apex:outputLabel value="From Currency"/>
@@ -44,10 +44,10 @@
                                     </apex:selectList>
                                     <apex:inputText value="{!amount}" label="Amount"/>
                                 </div>
-                            </apex:pageBlockSection>
-                            <apex:commandButton action="{!convert}" value="Convert"/>
-                            <apex:pageBlockSection columns="1" rendered="{!convertedAmount != null}">
-                                <apex:outputText label="Converted Amount" value="{!convertedAmount}"/>
+                                <apex:commandButton action="{!convert}" value="Convert"/>
+                                <apex:outputPanel>
+                                    <apex:outputText label="Converted Amount:" value="{!convertedAmount}"/>
+                                </apex:outputPanel>
                             </apex:pageBlockSection>
                         </apex:pageBlock>
                     </div>

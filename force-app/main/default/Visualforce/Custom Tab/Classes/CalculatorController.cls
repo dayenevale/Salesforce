@@ -5,7 +5,7 @@
  * @last modified on  : 02-20-2023
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
-public with sharing class calcController {
+public class CalculatorController {
     public Integer result { get; set; }
     public Integer op { get; set; }
     public String buttonValue { get; set; }
@@ -16,7 +16,7 @@ public with sharing class calcController {
     public Boolean divideByZeroError { get; set; } 
     public Boolean disableButtons { get; set; } 
     
-    public calcController() {
+    public CalculatorController() {
         result = null;
         op= -1;
         screen = ''; 
@@ -40,7 +40,6 @@ public with sharing class calcController {
         screen += ' '+buttonValue+' ';
         if(lastOperator == ''){
             lastOperator = buttonValue;
-           
         }
         switch on lastOperator{
             when '+' { add(); }
@@ -76,12 +75,16 @@ public with sharing class calcController {
         }
         result*=nums[op];
     }
+    
     public void divide() {
         try{
-            if(result==null){
-                result=1;
+            if(result == null){
+                result = nums[op]; 
             }
-            result/=nums[op];
+            else{
+                result/=nums[op];
+            }
+            
         }catch(Exception e){
             screen = '';
             result = null;

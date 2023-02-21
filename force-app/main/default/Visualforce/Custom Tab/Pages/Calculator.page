@@ -2,108 +2,57 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 02-20-2023
+  @last modified on  : 02-21-2023
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
-<apex:page controller="calcController" lightningStyleSheets="true" sidebar="false">
+<apex:page controller="CurrencyConverterController" lightningStyleSheets="true">
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
         <head>
             <meta charset="utf-8" />
             <meta http-equiv="x-ua-compatible" content="ie=edge" />
             <title>Calculator</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <apex:slds />
             <style>
-                #rst {
-                background-color: RGB(245, 245, 245); 
-                text-align: center;
-                margin-left:5px;
-                margin-bottom: 10px;
-                width: 270px;
-                }
                 .calc-block{	
                 margin-left:10%;
                 margin-right:10%;
                 margin-top: 10px;
                 }
             </style>
-            <apex:slds />
         </head>
         <body>
             <div class="slds-scope">
                 <apex:form >
                     <div class="calc-block">
-                        <apex:pageBlock>
-                            <div style="width:29%; margin:auto; margin-top:10px">
-                                <apex:pageBlock >
-                                    <apex:outputPanel id="msg">
-                                        <apex:pageMessage severity="error" strength="2" detail="It is impossible to divide by zero." rendered="{!divideByZeroError}"/>
-                                    </apex:outputPanel>
-                                    <div Id="rst" class="slds-box">
-                                        <apex:outputPanel id="result">
-                                            <apex:outputText value="{!screen}" />
-                                            
-                                        </apex:outputPanel>
-                                    </div>  
-                                    <apex:outputPanel id="buttons">
-                                        <div> 
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="1" action="{!show}" reRender="result">
-                                                <apex:param value="1" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="2" action="{!show}" reRender="result">
-                                                <apex:param value="2" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="3" action="{!show}" reRender="result">
-                                                <apex:param value="3" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="+" action="{!operate}" reRender="result">
-                                                <apex:param value="+" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton> 
-                                            <br/>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="4" action="{!show}" reRender="result">
-                                                <apex:param value="4" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="5" action="{!show}" reRender="result">
-                                                <apex:param value="5" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="6" action="{!show}" reRender="result">
-                                                <apex:param value="6" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="-" action="{!operate}" reRender="result">
-                                                <apex:param value="-" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <br/>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="7" action="{!show}" reRender="result">
-                                                <apex:param value="7" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="8" action="{!show}" reRender="result">
-                                                <apex:param value="8" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="9" action="{!show}" reRender="result">
-                                                <apex:param value="9" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="x" action="{!operate}" reRender="result">
-                                                <apex:param value="x" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <br/>
-                                            <apex:commandButton style="width: 60px; height: 40px;  margin: 5px;" value="Clear" action="{!clean}" reRender="result, msg, buttons"/>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="0" action="{!show}" reRender="result">
-                                                <apex:param value="0" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="=" action="{!operate}" reRender="result, msg, buttons">
-                                                <apex:param value="=" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                            <apex:commandButton disabled="{!disableButtons}" style="width: 60px; height: 40px;  margin: 5px;" value="/" action="{!operate}" reRender="result">
-                                                <apex:param value="/" assignTo="{!buttonValue}"/>
-                                            </apex:commandButton>
-                                        </div>
-                                    </apex:outputPanel>
-                                </apex:pageBlock>
-                            </div>
+                        <apex:pageBlock >
+                            <apex:pageBlockSection columns="1">
+                                <div style="width:250px;">
+                                    <apex:outputLabel value="From Currency"/>
+                                    <apex:selectList value="{!fromCurrency}" size="1">
+                                        <apex:selectOption itemLabel="Real" itemValue="BRL"/>
+                                        <apex:selectOption itemLabel="Dollar" itemValue="USD"/>
+                                        <apex:selectOption itemLabel="Euro" itemValue="EUR"/>
+                                        <apex:selectOption itemLabel="Pound" itemValue="GBP"/>
+                                    </apex:selectList>
+                                    <apex:outputLabel value="To Currency"/>
+                                    <apex:selectList value="{!toCurrency}" size="1">
+                                        <apex:selectOption itemLabel="Real" itemValue="BRL"/>
+                                        <apex:selectOption itemLabel="Dollar" itemValue="USD"/>
+                                        <apex:selectOption itemLabel="Euro" itemValue="EUR"/>
+                                        <apex:selectOption itemLabel="Pound" itemValue="GBP"/>
+                                    </apex:selectList>
+                                    <apex:inputText value="{!amount}" label="Amount"/>
+                                </div>
+                                <apex:commandButton action="{!convert}" value="Convert"/>
+                                <apex:outputPanel >
+                                    <apex:outputText value="Converted Amount: {!convertedAmount}"/>
+                                </apex:outputPanel>
+                            </apex:pageBlockSection>
                         </apex:pageBlock>
                     </div>
-                    
                 </apex:form>
             </div>
-        </body>       
+        </body>
     </html>
 </apex:page>

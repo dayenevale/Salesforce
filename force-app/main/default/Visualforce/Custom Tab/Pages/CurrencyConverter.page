@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 02-20-2023
+  @last modified on  : 02-21-2023
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <apex:page controller="CurrencyConverterController" lightningStyleSheets="true">
@@ -45,8 +45,8 @@
                                     <apex:inputText value="{!amount}" label="Amount"/>
                                 </div>
                                 <apex:commandButton action="{!convert}" value="Convert"/>
-                                <apex:outputPanel>
-                                    <apex:outputText label="Converted Amount:" value="{!convertedAmount}"/>
+                                <apex:outputPanel rendered="{!showResult}">
+                                    <apex:outputText value="Converted Amount: {!convertedAmount}"/>
                                 </apex:outputPanel>
                             </apex:pageBlockSection>
                         </apex:pageBlock>

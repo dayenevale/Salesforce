@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 02-20-2023
+  @last modified on  : 02-21-2023
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <apex:page lightningStyleSheets="true" >
@@ -20,7 +20,7 @@
         <body>
             <div class="slds-scope">
                 <apex:tabPanel >
-                    <apex:tab label="Simple Calculator" id="calc">  
+                    <apex:tab label="Simple Integer Calculator" id="calc">  
                          <div>
                             <apex:include pageName="Calculator"/>
                         </div>

@@ -1,0 +1,25 @@
+<!--
+  @description       : Save, quick save, edit, cancel, delete and list actions triggers the standard controller and execute 
+                       operations using the standard controller of the object.
+  @author            : Dayene Vale
+  @last modified on  : 02-23-2023
+-->
+<apex:page standardController="Account" lightningStylesheets="true" title="Account Edit" >
+    <apex:slds/>
+    <apex:form>
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockSection title="My Content Section" columns="2">
+                <apex:inputField value="{!account.name}"/>
+                <apex:inputField value="{!account.type}"/>
+                <apex:inputField value="{!account.phone}"/>
+                <apex:inputField value="{!account.industry}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton action="{!save}" value="Save"/>
+            <apex:commandButton action="{!quicksave}" value="Quick Save"/>
+            <apex:commandButton action="{!edit}" value="Edit"/>
+            <apex:commandButton action="{!delete}" value="Delete"/>
+            <apex:commandButton action="{!cancel}" value="Cancel"/>
+            <apex:commandButton action="{!list}" value="List" />
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

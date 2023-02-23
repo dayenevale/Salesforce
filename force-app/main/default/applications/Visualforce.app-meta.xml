@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#072C5E</headerColor>
+        <logo>Circle</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Visualforce</label>
+    <navType>Standard</navType>
+    <tabs>Tools</tabs>
+    <tabs>Actions</tabs>
+    <tabs>Account_Actions</tabs>
+    <tabs>Case_Actions</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Visualforce_UtilityBar</utilityBar>
+</CustomApplication>

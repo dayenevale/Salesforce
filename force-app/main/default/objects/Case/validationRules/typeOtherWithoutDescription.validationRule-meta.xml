@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>typeOtherWithoutDescription</fullName>
+    <active>true</active>
+    <description>When type &quot;other&quot; is selected, it is required to inform &quot;type detail&quot;.</description>
+    <errorConditionFormula>IF( AND( ISPICKVAL( Type , &apos;Other&apos;),  ISBLANK(TypeDetail__c )),TRUE, FALSE )</errorConditionFormula>
+    <errorDisplayField>TypeDetail__c</errorDisplayField>
+    <errorMessage>Please, inform Type Detail!</errorMessage>
+</ValidationRule>

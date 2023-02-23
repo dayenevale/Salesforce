@@ -4,7 +4,7 @@
  * @last modified on  : 02-23-2023
 **/
 
-public class CalculatorController {
+public with sharing class CalculatorController {
     
     public Integer result { get; set; }
     public Integer op { get; set; }

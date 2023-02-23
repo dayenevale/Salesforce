@@ -8,7 +8,7 @@ private class ActionsControllerTest {
     
     @isTest
     static void testIncrementCounter() {
-        ActionController controller = new ActionController();
+        ActionsController controller = new ActionsController();
         Integer initialCount = controller.getCount();
         
         controller.incrementCounter();
@@ -18,7 +18,7 @@ private class ActionsControllerTest {
     
     @isTest
     static void testIncrementCounter2() {
-        ActionController controller = new ActionController();
+        ActionsController controller = new ActionsController();
         Integer initialCount2 = controller.getCount2();
         
         controller.incrementCounter2();
@@ -28,7 +28,7 @@ private class ActionsControllerTest {
     
     @isTest
     static void testSayHello() {
-        ActionController controller = new ActionController();
+        ActionsController controller = new ActionsController();
         
         controller.sayHello();
         String username = UserInfo.getName();
@@ -37,7 +37,7 @@ private class ActionsControllerTest {
     
     @isTest
     static void testSetStateAndGetState() {
-        ActionController controller = new ActionController();
+        ActionsController controller = new ActionsController();
         
         controller.setState('yes');
         String state = controller.getState();
@@ -46,7 +46,7 @@ private class ActionsControllerTest {
     
     @isTest
     static void testMethodOne() {
-        ActionController controller = new ActionController();
+        ActionsController controller = new ActionsController();
         
         Test.startTest();
         controller.methodOne();

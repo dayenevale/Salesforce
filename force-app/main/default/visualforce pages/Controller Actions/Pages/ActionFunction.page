@@ -4,7 +4,7 @@
   @author            : Dayene Vale
   @last modified on  : 02-23-2023
 -->
-<apex:page controller="ActionController" sidebar="false" showHeader="false" LightningStylesheets="true">
+<apex:page controller="ActionsController" sidebar="false" showHeader="false" LightningStylesheets="true">
     <apex:form >
         <apex:pageBlock>
             <apex:pageBlockSection title="Page" columns="2">

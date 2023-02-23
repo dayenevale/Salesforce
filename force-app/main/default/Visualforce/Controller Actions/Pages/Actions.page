@@ -1,0 +1,34 @@
+<!--
+  @description       : Action methods perform logic or navigation when a page event occurs, such as when a user clicks a button, 
+                       or hovers over an area of the page.
+  @author            : Dayene Vale
+  @last modified on  : 02-23-2023
+-->
+<apex:page controller="ActionController" sidebar="false" showHeader="false" LightningStylesheets="true" title="Actions">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Command Button" columns="2">
+                <p>Creates a button that calls an action.</p>
+                <apex:commandButton action="{!save}" value="Submit" id="btnSave"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Command Link" columns="2">
+                <p>Creates a link that calls an action.</p>
+                <apex:commandLink action="{!save}" value="Access" id="lnkAccess"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Action Poller" columns="2">
+                <p>Periodically calls an action.</p>
+                <apex:outputText value="Watch this counter: {!count}" id="counter"/>
+                <apex:actionPoller action="{!incrementCounter}" reRender="counter" interval="5"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Action Support" columns="2">
+                <p>Makes an event (such as “onclick”, “onmouseover”, and so on) on another, named component, call an action</p>
+                <apex:outputpanel id="counter2">
+                    <apex:outputText value="Click Me! {!count2}"/>
+                    <apex:actionSupport event="onclick" action="{!incrementCounter2}" rerender="counter2" status="counterStatus"/>
+                </apex:outputpanel>
+                <apex:actionStatus id="counterStatus" startText=" Incrementing..." stopText=" Done!"/>
+            </apex:pageBlockSection>   
+        </apex:pageBlock>
+    </apex:form>
+    <apex:include pageName="ActionFunction"/>
+</apex:page>

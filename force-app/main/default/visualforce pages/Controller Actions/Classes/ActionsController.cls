@@ -3,12 +3,12 @@
  * @author            : Dayene Vale
  * @last modified on  : 02-23-2023
 **/
-public class ActionsController {
+public with sharing class ActionsController {
     public Integer count { get; set; }
     public Integer count2 { get; set; }
     public String uname { get; set;}
     
-    public ActionController(){
+    public ActionsController(){
         count = 0;
         count2 = 0;
     }

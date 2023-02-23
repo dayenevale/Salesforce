@@ -1,11 +1,11 @@
 /**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 02-20-2023
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @description       : Sales Commission Calculator Controller.
+ * @author            : Dayene Vale
+ * @last modified on  : 02-23-2023
 **/
+
 public with sharing class SalesCommissionCalculatorController {
+
     public Decimal salesAmount { get; set; }
     public Decimal commissionRate { get; set; }
     public Decimal commissionAmount { get; set; }
@@ -15,6 +15,5 @@ public with sharing class SalesCommissionCalculatorController {
         commissionAmount = salesAmount * commissionRate / 100;
         showResult = true;
         System.debug('commissionAmount = '+ commissionAmount);
-        
     }
 }

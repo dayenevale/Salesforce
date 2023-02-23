@@ -1,10 +1,9 @@
 /**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 02-20-2023
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @description       : Test for Currency Converter.
+ * @author            : Dayene Vale
+ * @last modified on  : 02-23-2023
 **/
+
 @isTest
 private class CurrencyConverterControllerTest {
 

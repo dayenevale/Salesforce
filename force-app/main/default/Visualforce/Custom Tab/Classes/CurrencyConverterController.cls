@@ -1,10 +1,9 @@
 /**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 02-21-2023
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @description       : Currency Converter Controller.
+ * @author            : Dayene Vale
+ * @last modified on  : 02-23-2023
 **/
+
 public with sharing class CurrencyConverterController {
         
    public String fromCurrency {get; set;}

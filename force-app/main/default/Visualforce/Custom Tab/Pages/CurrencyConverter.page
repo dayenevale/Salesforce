@@ -1,11 +1,11 @@
 <!--
-  @description       : 
-  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
-  @group             : 
-  @last modified on  : 02-21-2023
-  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  @description       : Convert the following currencies among them: BRL, USD, EUR and GBP.
+  @author            : Dayene Vale
+  @last modified on  : 02-23-2023
 -->
-<apex:page controller="CurrencyConverterController" lightningStyleSheets="true">
+
+<apex:page controller="CurrencyConverterController" showHeader="false" lightningStyleSheets="true" sidebar="false"
+           applyBodyTag="false" applyHtmlTag="false">
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
         <head>
             <meta charset="utf-8" />

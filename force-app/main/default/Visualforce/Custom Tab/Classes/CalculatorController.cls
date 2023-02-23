@@ -1,11 +1,11 @@
 /**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 02-20-2023
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @description       : Calculator Controller.
+ * @author            : Dayene Vale
+ * @last modified on  : 02-23-2023
 **/
+
 public class CalculatorController {
+    
     public Integer result { get; set; }
     public Integer op { get; set; }
     public String buttonValue { get; set; }

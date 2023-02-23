@@ -1,11 +1,11 @@
 <!--
-  @description       : 
-  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
-  @group             : 
-  @last modified on  : 02-20-2023
-  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  @description       : Calculate the commission given an amount and a porcentage.
+  @author            : Dayene Vale
+  @last modified on  : 02-23-2023
 -->
-<apex:page controller="SalesCommissionCalculatorController" lightningStyleSheets="true">
+
+<apex:page controller="SalesCommissionCalculatorController" showHeader="false" lightningStyleSheets="true" sidebar="false"
+           applyBodyTag="false" applyHtmlTag="false">
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
         <head>
             <meta charset="utf-8" />
